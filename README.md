@@ -23,5 +23,19 @@
 
 > Before start index.js make sure you have DB created in your local.
 
-
-# Documentation
+# API Documentation
+> **app.post('/user/register', userCtrl.registration)**;
+* Json Body: {
+  "fname": "narandhran",
+  "lname": "thangavel",
+  "username": "narandhran@gmail.com",
+  "password" : "password",
+  "dob": "1995-05-16",
+  "gender": "male",
+  "phone": "1234566789"
+}
+> **app.post('/user/login', userCtrl.login)**;
+* Json Body: {
+  "username": "narandhran@gmail.com",
+  "password": "password"
+}
