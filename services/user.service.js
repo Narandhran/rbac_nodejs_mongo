@@ -10,8 +10,8 @@ module.exports = {
 
     register: async (request, cb) => {
         let userObj = request.body;
-        let plainPassword = generatePassword();
-        userObj.password = encrypt(plainPassword);
+        // let plainPassword = generatePassword();
+        userObj.password = encrypt(userObj.password);
         isAdmin = await User.find({}).lean();
         userObj.role = isAdmin.length > 0 ? 'USER' : 'ADMIN';
         User.create(userObj, (err, result) => {
